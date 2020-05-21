@@ -29,19 +29,25 @@ export class Rocket {
     }
 
     addCargo(cargo: Cargo): boolean {
-        if (this.canAdd(cargo)) {
-            this.cargoItems.push(cargo);
-            return true;
+        let test: boolean = this.canAdd(cargo);
+        switch (test) {
+            case (true):
+                this.cargoItems.push(cargo);
+                return test;
+            case (false):
+                return test;
         }
-        return false;
     }
 
     addAstronaut(astronaut: Astronaut): boolean {
-        if (this.canAdd(astronaut)) {
-            this.astronauts.push(astronaut);
-            return true;
+        let test: boolean = this.canAdd(astronaut);
+        switch (test) {
+            case (true):
+                this.astronauts.push(astronaut);
+                return test;
+            case (false):
+                return test;
         }
-        return false;
     }
-
 }
+
